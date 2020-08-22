@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
                       itemCount: contact.take(10).length,
                       itemBuilder: (context, index) {
                         return GestureDetector(
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder:(context) => MyHomePage(contact[index].link,contact[index].imglink,contact[index].desc),)),
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder:(context) => MyHomePage(contact[index].link,contact[index].imglink,contact[index].desc,contact[index].name,)),
                           child: Stack(
                             children: <Widget>[
                               Hero(
