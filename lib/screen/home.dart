@@ -41,7 +41,13 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.white,
               ))
         ],
+        
       ),
+      drawer: Drawer(child: ListView(
+        children: [
+          GestureDetector( onTap: AllMoviesScreen(),child: Container(child: Text("All Movies")))
+        ],
+      ),),
       body: ListView(
         children: [
           StreamBuilder(
