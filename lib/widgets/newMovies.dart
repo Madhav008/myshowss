@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:myshows/bloc/get_newmovies.dart';
 import 'package:myshows/model/new_movis_model.dart';
-
+import 'package:myshows/widgets/video_screen.dart';
 
 class NewMoviesScreen extends StatefulWidget {
-
   _NewMoviesScreenState createState() => _NewMoviesScreenState();
 }
 
@@ -82,16 +81,24 @@ Widget _buildNewMovieWidget(snapshot) {
             ),
             child: Column(
               children: [
-                Container(
-                  width: 120.0,
-                  height: 180.0,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(2.0),
-                    ),
-                    shape: BoxShape.rectangle,
-                    image: DecorationImage(
-                      image: NetworkImage(newMovie[index].imglink),
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MyHomePage(newMovie[index].link,
+                            newMovie[index].imglink, newMovie[index].desc),
+                      )),
+                  child: Container(
+                    width: 120.0,
+                    height: 180.0,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(2.0),
+                      ),
+                      shape: BoxShape.rectangle,
+                      image: DecorationImage(
+                        image: NetworkImage(newMovie[index].imglink),
+                      ),
                     ),
                   ),
                 ),
@@ -99,26 +106,29 @@ Widget _buildNewMovieWidget(snapshot) {
                   height: 10.0,
                 ),
                 Expanded(
-                                  child: Container(width: 100.0,child: Text(
-                    newMovie[index].name,
-                    style: TextStyle(
-                      height: 1.4,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize:   15.0,
-
+                  child: Container(
+                    width: 100.0,
+                    child: Text(
+                      newMovie[index].name,
+                      style: TextStyle(
+                        height: 1.4,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15.0,
+                      ),
                     ),
-                  ),),
+                  ),
                 ),
-                SizedBox(height: 10.0,),
-                
+                SizedBox(
+                  height: 10.0,
+                ),
                 Text(
                   newMovie[index].category,
                   maxLines: 2,
                   style: TextStyle(
-                color: Colors.white,
-                fontSize: 15.0,
-                fontWeight: FontWeight.bold, 
+                    color: Colors.white,
+                    fontSize: 15.0,
+                    fontWeight: FontWeight.bold,
                   ),
                 )
               ],

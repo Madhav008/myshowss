@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:myshows/model/model.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:myshows/widgets/newMovies.dart';
+import 'package:myshows/widgets/video_screen.dart';
 import 'package:page_indicator/page_indicator.dart';
 import '../styles/theame.dart' as Style;
 import '../bloc/bloc.dart';
@@ -64,14 +65,7 @@ class _HomePageState extends State<HomePage> {
                       itemCount: contact.take(10).length,
                       itemBuilder: (context, index) {
                         return GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) {
-                                null;
-                              }),
-                            );
-                          },
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder:(context) => MyHomePage(contact[index].link,contact[index].imglink,contact[index].desc),)),
                           child: Stack(
                             children: <Widget>[
                               Hero(
@@ -177,6 +171,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           NewMoviesScreen(),
+          
         ],
       ),
     );

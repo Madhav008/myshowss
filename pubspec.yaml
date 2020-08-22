@@ -33,8 +33,9 @@ dependencies:
   eva_icons_flutter: ^2.0.1
   page_indicator: ^0.2.0
   font_awesome_flutter: null
-  chewie: ^0.9.10
+  chewie: ^0.9.7
   video_player: ^0.10.12
+ 
 
 dev_dependencies:
   flutter_test:
