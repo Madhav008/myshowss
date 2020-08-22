@@ -28,7 +28,6 @@ class _ChewieListItemState extends State<ChewieListItem> {
       videoPlayerController: widget.videoPlayerController,
       aspectRatio: 16 / 9,
       // Prepare the video to be played and display the first frame
-      autoInitialize: true,
       allowFullScreen: true,
       autoPlay: true,
       showControls: true,

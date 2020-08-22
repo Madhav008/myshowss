@@ -85,8 +85,11 @@ Widget _buildNewMovieWidget(snapshot) {
                   onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => MyHomePage(newMovie[index].link,
-                            newMovie[index].imglink, newMovie[index].desc),
+                        builder: (context) => MyHomePage(
+                            newMovie[index].link,
+                            newMovie[index].imglink,
+                            newMovie[index].desc,
+                            newMovie[index].name),
                       )),
                   child: Container(
                     width: 120.0,
@@ -97,6 +100,7 @@ Widget _buildNewMovieWidget(snapshot) {
                       ),
                       shape: BoxShape.rectangle,
                       image: DecorationImage(
+                        fit: BoxFit.cover,
                         image: NetworkImage(newMovie[index].imglink),
                       ),
                     ),
