@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:myshows/bloc/bloc.dart';
+import 'package:myshows/bloc/get_newmovies.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -13,6 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     contactBloc..getContacts();
+    newMoviesBloc..getNewMovie();
     Future.delayed(Duration(seconds: 5), () {
       Navigator.pushNamed(context, '/screen0');
     });

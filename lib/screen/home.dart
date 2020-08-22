@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
       ),
       drawer: Drawer(child: ListView(
         children: [
-          GestureDetector( onTap: AllMoviesScreen(),child: Container(child: Text("All Movies")))
+          // GestureDetector( onTap: Navigator.push(context, Material()),child: Container(child: Text("All Movies")))
         ],
       ),),
       body: ListView(
